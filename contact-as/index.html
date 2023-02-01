@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- font google ar  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- font google en -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+  <!-- style css -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <title>تواصل معنا</title>
+</head>
+
+<body>
+  <!-- start header  -->
+  <section class="header">
+    <nav>
+      <div class="logo"><img src="../img/logo.png" alt="" /></div>
+      <ul>
+        <li>
+          <a href="../index.html" data-i8in="home" class="active">الصفحه الراْسيه</a>
+        </li>
+        <li><a href="../about/index.html" data-i8in="about">من نحن</a></li>
+        <li><a href="../prises/index.html" data-i8in="prising">الاسعار </a></li>
+        <li><a href="index.html" data-i8in="contact">تواصل معنا</a></li>
+        <!-- <select>
+            <option value="en" data-i18n="english">En</option>
+            <option value="ar" data-i18n="arabic" selected>Ar</option>
+          </select> -->
+        <button class="dark"><img class="dark" src="../img/moon.png" /></button>
+        <!-- <select >
+          <option   data-i18n="dark"  class="dark" > Dark</option>
+          <option   data-i18n="light" selected class="light">Light</option>
+        </select> -->
+      </ul>
+
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+      </div>
+    </nav>
+  </section>
+  <!-- end header  -->
+  <!-- strat home -->
+  <section id="particles-js">
+    <div class="home">
+      <div class="contenair">
+        <div class="box reveal-reset-bottom">
+          <h1> تواصل معنا </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end home -->
+  <section class="contact reveal-reset-top">
+    <div class="img">
+      <img src="../img/tech-support.gif" alt="">
+    </div>
+    <div class="container reveal-reset-bottom">
+      <h1> تواصل معنا </h1>
+      <form onsubmit="sendEmail(); reset(); return false " action="#">
+        <input type="text" id="name" placeholder="اكتب اسمك" required>
+        <input type="number" id="phone" placeholder="اكتب تلفونك" required>
+        <input type="email" id="email" placeholder="اكتب البريد الالكتروني" required>
+        <textarea id="massege" cols="5" rows="5" placeholder="اكتب رسالتك"></textarea>
+        <button id="buton" type="submit">ارسال </button>
+      </form>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer>
+    <div class="container reveal-reset-bottom">
+      <div class="box-1 reveal-reset-top">
+        <img src="../img/logo.png" class="logo" alt="">
+        <ul class="reveal-reset-bottom">
+          <li class="about-as">عن الشركه </li>
+          <li><a href="../about/index.html">من نحن </a></li>
+          <li><a href="../contact-as/index.html">اتصل بنا </a></li>
+          <li class="mt-2">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            <a href=""><i class="fa-solid fa-envelope"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="box-1 reveal-reset-bottom">
+        <ul>
+          <li class="about-as">روابط هامه</li>
+          <li><a href="../index.html">الراْسيه</a></li>
+          <li><a href="../prises/index.html">خطط الأسعار</a></li>
+          <li class="about-as">ارقام التواصل</li>
+          <li><a href="tel:0110248700">0110248700</a></li>
+          <li><a href="tel:0110248700">0110248700</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <div class="footer">جميع الحقوق محفوظه لدي شركه MK</div>
+
+
+  <script src="js.js"></script>
+  <!-- particles -->
+  <script src="../js/scrollreveal.min.js"></script>
+  <script type="text/javascript" src="../js/particles.js/particles.min.js"></script>
+  <script type="text/javascript" src="../js/particles.js/app.js"></script>
+  <!-- js gmail -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail() {
+      Email.send({
+        SecureToken: "edba4d8f-2b48-4d2f-9721-4f842cd4a751",
+        To: 'akramahraf2004@gmail.com',
+        From: "akramahraf2004@gmail.com",
+        Subject: "This is the subject",
+        Body: "name: " + document.querySelector("#name").value
+          + "<br/> Email: " + document.querySelector("#email").value
+          + "<br/> phone: " + document.querySelector("#phone").value
+          + "<br/> massege: " + document.querySelector("#massege").value
+      }).then(
+        message => alert("لقد تمم ارساله الرساله بنجاح ")
+      );
+    }
+  </script>
+</body>
+
+</html>
